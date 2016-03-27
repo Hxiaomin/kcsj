@@ -1,0 +1,159 @@
+.debtList {
+  overflow: hidden;
+  height: 360px; 
+  margin-left: 20px;
+}
+  .debtList tr:hover {
+    cursor: pointer;
+    color: #5ADEB7; }
+  .debtList tr:nth-child(1):hover {
+    cursor: auto;
+    color: black; }
+  .debtList tr:nth-child(odd) {
+    background-color: #E5FCF4; }
+  .debtList tr:nth-child(1) {
+    background-color: white; }
+  .debtList tr td {
+    padding-right: 30px;
+    padding-left: 30px;
+    text-align: center; }
+    .debtList tr td:nth-child(4) {
+      padding-right: 0px; }
+.debtTitle{ 
+	width: 750px;
+	height: 30px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: 2px solid #BABABA;
+}
+.debtTitle span {
+    float: left; 
+}
+.debtTitle a {
+    float: right; 
+	display: inline-block;
+}
+#debtTab1,#borrowTab1{ 
+	display: block;
+}
+#debtTab2,#borrowTab2{ 
+	display: none;
+}
+#debtTab3,#borrowTab3{ 
+	display: none;
+	width: 700px;
+	height: 400px;
+	text-align: center;
+	line-height: 400px;
+}
+#debtTab3 .returnContent,#borrowTab3 .returnContent{ 
+	display: inline-block;
+}
+.debtPersonOuter {
+  width: 650px;
+  height: 120px;
+  margin-left: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid #BABABA; }
+  .debtPersonOuter .debtPerson {
+    display: inline;
+    float: left; }
+
+.debtDelete {
+  display: inline; }
+  .debtDelete .delete {
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-right: 30px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 15px;
+    border-radius: 30px;
+    border: 1px solid black; }
+    .debtDelete .delete:hover {
+      cursor: pointer;
+      color: red;
+      border: 1px solid red; }
+
+
+
+.debtorTitle{ 
+	width: 750px;
+	height: 30px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: 2px solid #BABABA;
+}
+.debtorTitle span {
+    float: left; 
+}
+.debtorTitle a {
+    float: right; 
+	display: inline-block;
+}
+.debtorouter{ 
+	width: 650px;
+	height: 400px;
+	display: inline-block;
+	margin-left: 30px;
+}
+.debtor{ 
+	overflow: hidden;
+	display: inline-block;
+}
+.debtor>.debtorName{ 
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	border: 1px solid #5ADEB7;
+	color: #5ADEB7;
+	margin: 20px;
+	border-radius: 10px;
+}
+.debtor>.debtordelete{ 
+	width: 60px;
+	height: 10px;
+	line-height: 10px;
+	text-align: center;
+	border: 1px solid #5ADEB7;
+	color: #5ADEB7;
+	padding: 10px;
+	margin-left: 20px;
+	border-radius: 10px;
+}
+.debtor>.debtordelete:hover{ 
+	color: white;
+	border: 1px solid white;
+	background-color: #5ADEB7;
+	cursor: pointer;
+}
+#add-debtor-button2{ 
+	display: inline-block;
+	float: right;
+}
+.plusfont{ 
+	margin-top: 10px;
+	font-size: 18px;
+}
+#debtorTab1{ 
+	display: block;
+}
+#debtorTab2,#debtorTab3{ 
+	display: none;
+}
+.debtorForm{ 
+	margin-top: 20px;
+}
+#debtorTab3{ 
+	width: 700px;
+	height: 400px;
+	text-align: center;
+	line-height: 400px;
+}
+#debtorTab3 .returnContent{ 
+	display: inline-block;
+}

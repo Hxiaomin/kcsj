@@ -1,0 +1,39 @@
+#periodForm{ 
+	margin-top: 20px;
+}
+#ontimeTab1{ 
+	display: block;
+}
+#ontimeTab2,#ontimeTab3,#ontimeTab4{ 
+	display: none;
+}
+.ontimeSubmit{ 
+	border: 1px solid #59DEB7;
+	color: #59DEB7;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 40px;
+	font-size: 18px;
+	margin-top: 30px;
+	margin-left: 80px;
+}
+.ontimeSubmit:hover{ 
+	border: 1px solid white;
+	background-color: #59DEB7;
+	color: white;
+	cursor: pointer;
+}
+.ontimeDataInput{ 
+	margin-top: 20px;
+}
+#ontimeTab4{ 
+	width: 700px;
+	height: 400px;
+	text-align: center;
+	line-height: 400px;
+}
+#ontimeTab4 .returnContent{ 
+	display: inline-block;
+}

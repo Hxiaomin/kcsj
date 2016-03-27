@@ -1,0 +1,490 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8,chrome=1">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<title>家庭财务管理系统</title>
+</head>
+<body>
+	<div id="mainadministrator1">
+		<div id="nav">
+			<ul>
+				<li><a href="index.html #">欢迎登录家庭财务管理系统</a></li>
+			</ul>
+			<div class="portrait">
+				<a href="javascript:userexit()">
+					退出
+				</a>
+			</div>
+		</div>
+		<div class="content">
+			<div class="center-content" id="center-content">
+				<div id="tab1" class="tab">
+					<div class="info-content">
+						<form action="/changeusername" method="post" id="changeForm">
+				            <p>
+				            	<label for="username">用户名：</label>
+				            	<input type="text" id="username" name="username" placeholder="" value=""/>
+				            </p>
+				            	<label for="password">密码：</label>
+				            	<div class="changepassword" id="changePassword">修改密码</div>
+				            <div class="infoInput">
+					            <input type="submit" class="submit-input"/>
+					            <input type="reset" class="reset-input" />
+					        </div>
+						</form>
+					</div>
+					<div class="overlay"></div>
+					<div id="modal1" class="modal">
+						<div class="closeBtn-all">
+							<span>&nbsp&nbsp|&nbsp修改密码</span>
+							<span class="closeBtn"><i class="fa fa-times fa-lg"></i>&nbsp</span>
+				        </div>
+				        <form class="passageword" action="/changepassword" method="post" id="changepassword">
+				        	<ul>
+				        		<li>
+				        			<span>当前密码</span>
+				        			<div><input type="password" placeholder="请输入当前密码" name="password1" id="passagepassword1"></div>
+				        		</li>
+				        		<li>
+				        			<span>新密码</span>
+				        			<div><input type="password" placeholder="请输入新密码" name="password2" id="passagepassword2"></div>
+				        		</li>
+				        		<li>
+				        			<span>确认密码</span>
+				        			<div><input type="password" placeholder="请再次输入新密码" name="password3" id="passagepassword3"></div>
+				        		</li>
+				        	</ul>
+				        	<div class="btn-passageword">
+								<button type="submit" text="确认修改">确认修改</button>
+								<button type="submit" text="忘记密码">忘记密码</button>
+							</div>
+				        </form>
+				    </div>
+				</div>
+				<div id="tab2" class="tab">
+					<div class="circleTab" id="circleTab1">
+						<div class="chargeTitle">
+							<span>日常记账</span>
+							<a href="javascript:void(0)" id="chargeReturn1">➚返回</a>
+						</div>
+						<div class="chargeForm">
+							<form action="/addbook" id="addRegistration" method="post"> 
+								<p>
+									<label for="type">类型：</label>
+									<input type="radio" name="type" value="1" class="inputRadio">支出  
+									<input type="radio" name="type" value="1" class="inputRadio">收入
+									<input type="radio" name="type" value="2" class="inputRadio">借出  
+									<input type="radio" name="type" value="2" class="inputRadio">借入
+								</p>
+								<p>
+									<label for="amount">金额：</label>
+					            	<input type="text" name="amount" placeholder="" value="" id="registrateMoney" />
+					            </p>
+					            <p>
+					            	<label for="time">时间：</label>
+					            	<input type="date" name="time" placeholder="" value="" id="registrateTime" />
+					            </p>
+					            <p>
+					            	<label for="memberId">消费者：</label>
+					            	<select name="memberId" id="registratePerson">
+
+					            	</select>
+					            </p>
+					            <p>
+					            	<label for="debtorId">债务人：</label>
+					            	<select name="debtorId" id="registrateDebt">
+										<option value=""></option>
+					            	</select>
+					            </p>
+					            <p>
+					            	<label for="note">备注：</label>
+					            	<textarea rows="1" cols="50" name="note" id="registrateNote"></textarea>
+					            </p>
+					            <p class="chargeLastInput">
+						            <input type="submit" class="submit-input" id="registrateSubmit"/>
+						            <input type="reset" class="reset-input" />
+					        	</p>
+							</form>
+						</div>
+					</div>
+					<div class="circleTab" id="circleTab2">
+						<div class="chargeTitle">
+							<span>日常账单</span>
+							<div class="allChargeRecord">总金额:<div class="allCharge" id="allCharge">100000000</div>收支总额:<div class="allCharge" id="incomeCharge">1000000</div>借还总额:<div class="allCharge" id="circulateCharge">100000</div><a href="javascript:void(0)" id="chargeReturn2">➚返回</a></div>
+						</div>
+						<div class="charge2List">
+							<table>
+								<tr><td>类型</td><td class="column2">消费者</td><td>金额</td><td>时间</td><td>备注</td></tr>
+								
+							</table>
+						</div>
+						<div class="charge2Foot">
+							<div class="charge2Foot1"><a href="javascript:forward()" id="pagelast">上一页</a></div>
+							<div class="charge2Foot3"><a href="javascript:back()" id="pagenext">下一页</a></div>
+							<div class="charge2Foot4">转到<input type="text" id="chargeInput"><a href="javascript:pageTurn()">转到该页</a></div>
+						</div>
+					</div>
+					<div class="circleTabspecail" id="circleTab3">
+						<div class="chargeTitle">
+							<span>记录详情</span>
+							<a href="javascript:void(0)" id="chargeReturn3">➚返回</a>
+						</div>
+						<div class="chargeForm">
+							<form> 
+								<p>
+									<label for="chargeType">类型：</label>
+									<input type="radio" name="chargeType" value="支出" class="inputRadio" id="radio1">支出  
+									<input type="radio" name="chargeType" value="收入" class="inputRadio" id="radio2">收入
+									<input type="radio" name="chargeType" value="借出" class="inputRadio" id="radio3">借出  
+									<input type="radio" name="chargeType" value="借入" class="inputRadio" id="radio4">借入
+								</p>
+								<p>
+									<label for="chargeMoney">金额：</label>
+					            	<input type="text" name="chargeMoney" placeholder="" value="" id="mycost" />
+					            </p>
+					            <p>
+					            	<label for="chargeTime">时间：</label>
+					            	<input type="date" name="chargeTime" id="myDate" />
+					            </p>
+					            <p>
+					            	<label for="chargePerson">消费者：</label>
+					            	<select name="chargePerson" id="mySelect">
+
+					            	</select>
+					            </p>
+					            <p>
+					            	<label for="chargeDebt">债务人：</label>
+					            	<select name="chargeDebt" id="myDebtor">
+
+					            	</select>
+					            </p>
+					            <p>
+					            	<label for="chargeNote">备注：</label>
+					            	<textarea rows="1" cols="50" name="chargeNote" id="myNote"></textarea>
+					            </p>
+					            <p class="chargeLastInput">
+						            <input type="submit" class="submit-input" id="modifySubmit"/>
+						            <input type="reset" class="reset-input" />
+					        	</p>
+							</form>
+						</div>
+						<div class="chargeRecordDelete" id="modifyDelete" onclick="bookdelete()">删除</div>
+					</div>
+					<div id="circleTab4">
+						<div class="returnContent"></div><a href="javascript:getbooks(data)" id="updateReturn">点击返回</a>
+					</div>
+					<div id="circleTab5">
+						<div class="returnContent"></div><a href="javascript:chargeaccount()" id="addbookReturn">点击返回</a>
+					</div>
+					<div class="circleTab" id="circleTab6">
+						<div id="debtTab1">
+							<div class="lendTitle">
+								<span>借出管理</span>
+								<a href="javascript:void(0)" id="lendReturn">➚返回</a>
+							</div>
+							<div class="debtList" id="debtList">
+								<table>
+									<tr><td>债务人</td><td>消费者</td><td class="column2">金额</td><td>时间</td><td>备注</td></tr>
+									
+								</table>
+							</div>
+							<div class="debtListFoot">
+								<div class="debtListFoot1"><a href="javascript:debtforward()">上一页</a></div>
+								<div class="debtListFoot3"><a href="javascript:debtback()">下一页</a></div>
+								<div class="debtListFoot4">转到<input type="text"><a href="javascript:void(0)">转到该页</a></div>
+							</div>
+						</div>
+						<div id="debtTab2">
+							<div class="debtTitle">
+								<span>借出管理</span>
+								<a href="javascript:void(0)" id="debtReturn">➚返回</a>
+							</div>
+							<div class="debtPersonOuter">
+								<div class="debtPerson">
+									债务人:<span id="detailName"></span><br/>
+									消费者:<span id="detailMember"></span><br/>
+									金额:<span id="detailCost"></span><br/>
+									时间:<span id="detailTime"></span><br/>
+									备注:<span id="detailNote"></span><br/>
+								</div>
+								<div class="debtDelete">
+									<div class="delete" id="debtDelete" onclick="deletedebt()">删除</div>
+								</div>
+							</div>
+						</div>
+						<div id="debtTab3">
+							<div class="returnContent"></div><a href="javascript:getlendbooks('/getlendbook',null)" id="deletedebtReturn">点击返回</a>
+						</div>
+					</div>
+					<div class="circleTab" id="circleTab7">
+						<div id="borrowTab1">
+							<div class="lendTitle">
+								<span>借入管理</span>
+								<a href="javascript:void(0)" id="borrowReturn">➚返回</a>
+							</div>
+							<div class="debtList" id="borrowList">
+								<table>
+									<tr><td>债务人</td><td>消费者</td><td class="column2">金额</td><td>时间</td><td>备注</td></tr>
+									
+								</table>
+							</div>
+							<div class="debtListFoot">
+								<div class="debtListFoot1"><a href="javascript:borrowforward()">上一页</a></div>
+								<div class="debtListFoot3"><a href="javascript:borrowback()">下一页</a></div>
+								<div class="debtListFoot4">转到<input type="text"><a href="javascript:void(0)">转到该页</a></div>
+							</div>
+						</div>
+						<div id="borrowTab2">
+							<div class="debtTitle">
+								<span>借入管理</span>
+								<a href="javascript:void(0)" id="borrow2Return">➚返回</a>
+							</div>
+							<div class="debtPersonOuter">
+								<div class="debtPerson">
+									债务人:<span id="borrowDetailName"></span><br/>
+									消费者:<span id="borrowDetailMember"></span><br/>
+									金额:<span id="borrowDetailCost"></span><br/>
+									时间:<span id="borrowDetailTime"></span><br/>
+									备注:<span id="borrowDetailNote"></span><br/>
+								</div>
+								<div class="debtDelete">
+									<div class="delete" id="borrowDelete" onclick="deleteborrow()">删除</div>
+								</div>
+							</div>
+						</div>
+						<div id="borrowTab3">
+							<div class="returnContent"></div><a href="javascript:getborrowbooks('/getborrowbook',null)" id="deleteborrowReturn">点击返回</a>
+						</div>
+					</div>
+					<div class="tab2Center" id="tab2Circle">
+						<a href="javascript:chargeaccount()"><div class="circle">记账</div></a>
+						<a href="javascript:getbooks()"><div class="circle">查看流水</div></a>
+						<a href="javascript:getlendbooks('/getlendbook',null)"><div class="circle">借出管理</div></a>
+						<a href="javascript:getborrowbooks('/getborrowbook',null)"><div class="circle">借入管理</div></a>
+					</div>
+				</div>
+				<div id="tab3" class="tab">
+					<div id="memberTab1">
+						<div class="memberTitle">
+							<span>家庭成员</span>
+						</div>
+						<div class="memberouter">
+							
+						</div>
+						<div class="icon-plus" id="add-button2"><div class="plusfont">新增人员</div></div>
+					</div>
+					<div id="memberTab2">
+						<div class="memberTitle">
+							<span>家庭成员</span>
+							<a href="javascript:void(0)" id="memberReturn">➚返回</a>
+						</div>
+						<div class="memberForm">
+							<form action="/member" id="addMember" method="post"> 
+								<p>
+									<label for="memberName">成员名字：</label>
+									<input type="text" name="memberName"  placeholder="" value="" id="memberName" />
+									<input type="hidden" name="action" value="add"/>
+								</p>
+								<p class="chargeLastInput">
+						            <input type="submit" class="submit-input"/>
+						            <input type="reset" class="reset-input" />
+				        		</p>
+							</form>
+						</div>
+					</div>
+					<div id="memberTab3">
+						<div class="returnContent"></div><a href="javascript:getmembers()" id="deleteReturn">点击返回</a>
+					</div>
+				</div>
+				<div id="tab4" class="tab">
+					<div id="debtorTab1">
+						<div class="debtorTitle">
+							<span>债务人员</span>
+						</div>
+						<div class="debtorouter">
+							
+						</div>
+						<div class="icon-plus" id="add-debtor-button2"><div class="plusfont">新增人员</div></div>
+					</div>
+					<div id="debtorTab2">
+						<div class="debtorTitle">
+							<span>债务人员</span>
+							<a href="javascript:void(0)" id="debtorReturn">➚返回</a>
+						</div>
+						<div class="debtorForm">
+							<form action="/debtor" id="adddebtor" method="post"> 
+								<p>
+									<label for="debtorName">债务人名字：</label>
+									<input type="text" name="debtorName"  placeholder="" value="" id="debtorName" />
+									<input type="hidden" name="action" value="add"/>
+								</p>
+								<p class="chargeLastInput">
+						            <input type="submit" class="submit-input" onclick="periodsubmit()" />
+						            <input type="reset" class="reset-input" />
+				        		</p>
+							</form>
+						</div>
+					</div>
+					<div id="debtorTab3">
+						<div class="returnContent"></div><a href="javascript:getdebtors()" id="deleteReturn1">点击返回</a>
+					</div>
+				</div>
+				<div id="tab5" class="tab">
+					<div class="ontimetab" id="ontimeTab1">
+						<div class="debtorTitle">
+							<span>按时查找</span>
+						</div>
+						<div class="ontimeDataInput">
+							<input type="date" id="time1">-<input type="date" id="time2">	
+						</div>		
+			            <div class="ontimeSubmit" id="ontimeInfoSubmit" onclick="periodsubmit()">提交</div>
+					</div>
+					<div id="ontimeTab2"> 
+						<div class="debtorTitle">
+							<span>按时查找</span>
+							<a href="javascript:void(0)" id="ontimeReturn">➚返回</a>
+						</div>
+						<div class="debtList" id="ontimeList">
+							<table>
+								<tr><td>债务人</td><td>消费者</td><td class="column2">金额</td><td>时间</td><td>备注</td></tr>
+								
+							</table>
+						</div>
+						<div class="debtListFoot">
+							<div class="debtListFoot1"><a href="javascript:ontimeforward()">上一页</a></div>
+							<div class="debtListFoot3"><a href="javascript:ontimeback()">下一页</a></div>
+							<div class="debtListFoot4">转到<input type="text"><a href="javascript:void(0)">转到该页</a></div>
+						</div>
+					</div>
+					<div class="circleTabspecail" id="ontimeTab3">
+						<div class="chargeTitle">
+							<span>按时查找</span>
+							<a href="javascript:void(0)" id="ontimeReturn1">➚返回</a>
+						</div>
+						<div class="chargeForm">
+							<form> 
+								<p>
+									<label for="ontimeType">类型：</label>
+									<input type="radio" name="ontimeType" value="支出" class="inputRadio" id="ontimeRadio1">支出  
+									<input type="radio" name="ontimeType" value="收入" class="inputRadio" id="ontimeRadio2">收入
+									<input type="radio" name="ontimeType" value="借出" class="inputRadio" id="ontimeRadio3">借出  
+									<input type="radio" name="ontimeType" value="借入" class="inputRadio" id="ontimeRadio4">借入
+								</p>
+								<p>
+									<label for="ontimeMoney">金额：</label>
+					            	<input type="text" name="ontimeMoney" placeholder="" value="" id="myOntimeCost" />
+					            </p>
+					            <p>
+					            	<label for="ontimeTime">时间：</label>
+					            	<input type="date" name="ontimeTime" id="myOntimeDate" />
+					            </p>
+					            <p>
+					            	<label for="ontimePerson">消费者：</label>
+					            	<select name="ontimePerson" id="myOntimeSelect">
+
+					            	</select>
+					            </p>
+					            <p>
+					            	<label for="ontimeDebt">债务人：</label>
+					            	<select name="ontimeDebt" id="myOntimeDebtor">
+
+					            	</select>
+					            </p>
+					            <p>
+					            	<label for="ontimeNote">备注：</label>
+					            	<textarea rows="1" cols="50" name="ontimeNote" id="myOntimeNote"></textarea>
+					            </p>
+					            <p class="chargeLastInput">
+						            <input type="submit" class="submit-input" id="ontimeModifySubmit"/>
+						            <input type="reset" class="reset-input" />
+					        	</p>
+							</form>
+						</div>
+						<div class="chargeRecordDelete" id="ontimeModifyDelete" onclick="ontimebookdelete()">删除</div>
+					</div>
+					<div id="ontimeTab4">
+						<div class="returnContent"></div><a href="javascript:periodsubmit()" id="ontimeReturn2">点击返回</a>
+					</div>
+				</div>
+				<div class="menumanagement-frame" id="menuoptions">
+					<ul>
+						<li><a href="javascript:void(0)" class="active"><i class="icon-pencil"></i>系统管理</a><hr/></li>
+						<li><a href="javascript:void(0)"><i class="icon-user"></i>账本管理</a><hr/></li>
+						<li><a href="javascript:getmembers()"><i class="icon-users"></i>家庭管理</a><hr/></li>
+						<li><a href="javascript:getdebtors()"><i class="icon-windows"></i>债务管理</a><hr/></li>
+						<li><a href="javascript:void(0)"><i class="icon-windows"></i>按时查找</a><hr/></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.modal.js"></script>
+<script type="text/javascript" src="base.js"></script>
+<script type="text/javascript" src="tab.js"></script>
+<script type="text/javascript">
+	var user;
+	$.getJSON('/user',function(json){
+		console.log(json);
+		if(json.error===1000){ 
+			window.location.href = '/login.html';
+		}
+
+		user = json;
+		document.getElementById('username').value = user.username;
+		
+	});
+	//添加家庭成员
+	formSumit('#addMember',function(result){ 
+		if(result.error===0){ 
+			$("#memberTab3 .returnContent").text(result.msg);
+			tabsdisplay("#memberTab3","#memberTab2");
+			$("#memberName").prop("value","");
+		}
+	});
+	//添加债务人员
+	formSumit('#adddebtor',function(result){ 
+		if(result.error===0){ 
+			$("#debtorTab3 .returnContent").text(result.msg);
+			tabsdisplay("#debtorTab3","#debtorTab2");
+			$("#debtorName").prop("value","");
+		}
+	});
+	formSumit('#addRegistration',function(result){ 
+		if(result.error===0){ 
+			$("#circleTab5>.returnContent").text(result.msg);
+			tabsdisplay("#circleTab5","#circleTab1");
+			tabsdisplay("#circleTab1","#circleTab5","#addbookReturn");
+			//查看借入页面账单列表总记录数，再将他们转换为总页面数
+			getbooksnumber("/borrowbooksnumber",function(returnData){ 
+			borrowrecordNumber=returnData.msg;
+			borrowrecordPage=borrowrecordNumber[0].recordNumber/14;
+			});
+			//查看流水页面账单列表总记录数，再将他们转换为总页面数
+			getbooksnumber("/booksnumber",function(returnData){ 
+				recordNumber=returnData.msg;
+				recordPage=recordNumber[0].recordNumber/15;
+			});
+			//查看借出页面账单列表总记录数，再将他们转换为总页面数
+			getbooksnumber("/debtbooksnumber",function(returnData){ 
+				debtrecordNumber=returnData.msg;
+				debtrecordPage=debtrecordNumber[0].recordNumber/14;
+			});
+		}
+	});
+	//修改密码
+	formSumit('#changepassword',function(result){ 
+			alert(result.msg);
+	});
+	formSumit('#changeForm',function(result){ 
+			alert(result.msg);
+	});
+	//用户退出
+	function userexit(){ 
+		window.location.href = '/login.html';
+	}
+	
+</script>
+</html>

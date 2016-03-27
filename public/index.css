@@ -1,0 +1,241 @@
+@charset "UTF-8";
+@import url(tab1.css);
+@import url(tab2.css);
+@import url(tab3.css);
+@import url(tab4.css);
+@import url(tab5.css);
+body {
+  background-color: white;
+  overflow-y: hidden; 
+}
+
+@font-face {
+  font-family: icomoon;
+  src: url(../admfonts/icomoon.eot?gat71i);
+  src: url(../admfonts/icomoon.eot?gat71i#iefix) format("embedded-opentype"), url(../admfonts/icomoon.ttf?gat71i) format("truetype"), url(../admfonts/icomoon.woff?gat71i) format("woff"), url(../admfonts/icomoon.svg?gat71i#icomoon) format("svg");
+  font-weight: 400;
+  font-style: normal; }
+[class*=" icon-"], [class^=icon-] {
+  font-family: icomoon;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-plus:before {
+  content: "\e900";
+  font-size: 55px; }
+
+.icon-arrow-right2:before {
+  content: "\e906"; }
+
+.icon-file:before {
+  content: "\e902"; }
+
+.icon-windows:before {
+  content: "\e901"; }
+
+.icon-user:before {
+  content: "\e903"; }
+
+.icon-users:before {
+  content: "\e904"; }
+
+.icon-pencil:before {
+  content: "\e905"; }
+
+.icon-plus {
+  padding-top: 10px;
+  width: 90px;
+  height: 90px;
+  display: inline;
+  margin-right: 10px;
+  float: left;
+  text-align: center;
+  margin-top: 10px; }
+
+.icon-plus:hover {
+  color: #59DEB6;
+  cursor: pointer; }
+
+.icon-arrow-right2 {
+  font-size: 30px;
+  display: inline;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  width: 50px;
+  text-align: center;
+  color: #E1E1E1; }
+
+a:link, a:visited {
+  color: #5d6866;
+  text-decoration: none; }
+
+a:active, a:hover {
+  color: #59DEB7;
+  text-decoration: none; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei"; }
+
+
+#mainadministrator1 #nav {
+  width: 100%;
+  height: 70px;
+  background-color: #f5f9f8; }
+  #mainadministrator1 #nav span {
+    display: inline-block; }
+  #mainadministrator1 #nav .logo {
+    position: absolute;
+    top: 15px;
+    width: 125px;
+    height: 42px;
+    left: 15%;
+    background: url(../images/nav_logo.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover; }
+  #mainadministrator1 #nav ul {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 15%;
+    font-size: 16px;
+    padding-top: 22px; }
+    #mainadministrator1 #nav ul li {
+      display: inline-block;
+      height: 30px;
+      margin-right: 55px;
+      line-height: 30px; }
+      #mainadministrator1 #nav ul li:hover {
+        color: #4ed0b6;
+        border-bottom: 2px solid #59DEB7; }
+  #mainadministrator1 #nav .portrait {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 12%;
+    top: 25px;
+    overflow: hidden; }
+  #mainadministrator1 .content {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  padding-top: 20px;
+  background-color: white; }
+  #mainadministrator1 .content .center-content {
+    width: 1050px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 0;
+  }
+ .tab {
+  width: 800px;
+  height: 470px;
+  float: right;
+  padding-top: 20px;
+  padding-left: 20px;
+  border-top: 1px solid #BABABA;
+  box-shadow: 4px 4px 4px #F4F4F4; 
+  margin-top: 30px;
+}
+
+#tab1 {
+  display: block; }
+
+#tab2, #tab4, #tab3,#tab5{
+  display: none; }
+.menumanagement-frame {
+  float: left;
+  height: 490px;
+  width: 200px;
+  margin-top: 30px;
+  border-top: 1px solid #BABABA;
+  box-shadow: 4px 4px 4px #F4F4F4; 
+  font-size: 20px;
+}
+  .menumanagement-frame ul {
+    list-style: none;
+    margin: 0 auto;
+    text-align: center; }
+    .menumanagement-frame ul li {
+      padding-top: 15px; }
+      .menumanagement-frame ul li .active {
+        color: #59DEB7; }
+      .menumanagement-frame ul li a i {
+        margin-right: 5px; }
+      .menumanagement-frame ul li hr {
+        width: 160px;
+        margin: 0 auto;
+        margin-top: 20px; }
+
+.info-content {
+  display: inline-block;
+  width: 700px;
+  height: 400px;
+  padding-top: 20px; 
+}
+  .info-content form {
+    vertical-align: middle; }
+      .info-content form p { 
+		line-height: 50px;
+      }
+      .info-content form .infoInput{ 
+			overflow: hidden;
+			margin-top: 100px;
+      }
+    .info-content form input {
+      margin-top: 10px;
+      width: 200px; 
+	  height: 30px;
+  }
+    .info-content form .submit-input {
+      border: 1px solid #5ADEB7;
+      width: 120px;
+      height: 30px;
+      margin-left: 200px;
+      margin-top: 10px;
+      color: #5ADEB7;
+      font-size: 18px;
+      background-color: white;
+      border-radius: 20px; }
+    .info-content form .reset-input {
+      border: 1px solid #5ADEB7;
+      width: 120px;
+      height: 30px;
+      margin-left: 30px;
+      margin-top: 10px;
+      color: #5ADEB7;
+      font-size: 18px;
+      background-color: white;
+      border-radius: 20px; }
+    .info-content form .submit-input:hover, .info-content form .reset-input:hover {
+      background-color: #5ADEB7;
+      color: white;
+      cursor: pointer;
+      border: 1px solid white; }
+.changepassword {
+  width: 80px;
+  height: 25px;
+  margin-left: 20px;
+  margin-top: 10px;
+  color: #5ADEB7;
+  font-size: 10px;
+  line-height: 25px;
+  text-align: center;
+  border: 1px solid #5ADEB7;
+  border-radius: 20px;
+  display: inline-block;
+}
+  .changepassword:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #5ADEB7;
+    border: 1px solid white; }

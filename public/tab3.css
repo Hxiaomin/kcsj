@@ -1,0 +1,78 @@
+.memberTitle{ 
+	width: 750px;
+	height: 30px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: 2px solid #BABABA;
+}
+.memberTitle span {
+    float: left; 
+}
+.memberTitle a {
+    float: right; 
+	display: inline-block;
+}
+.memberouter{ 
+	width: 650px;
+	height: 400px;
+	display: inline-block;
+	margin-left: 30px;
+}
+.member{ 
+	overflow: hidden;
+	display: inline-block;
+}
+.member>.memberName{ 
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	border: 1px solid #5ADEB7;
+	color: #5ADEB7;
+	margin: 20px;
+	border-radius: 10px;
+}
+.member>.memberdelete{ 
+	width: 60px;
+	height: 10px;
+	line-height: 10px;
+	text-align: center;
+	border: 1px solid #5ADEB7;
+	color: #5ADEB7;
+	padding: 10px;
+	margin-left: 20px;
+	border-radius: 10px;
+}
+.member>.memberdelete:hover{ 
+	color: white;
+	border: 1px solid white;
+	background-color: #5ADEB7;
+	cursor: pointer;
+}
+#add-button2{ 
+	display: inline-block;
+	float: right;
+}
+.plusfont{ 
+	margin-top: 10px;
+	font-size: 18px;
+}
+#memberTab1{ 
+	display: block;
+}
+#memberTab2,#memberTab3{ 
+	display: none;
+}
+.memberForm{ 
+	margin-top: 20px;
+}
+#memberTab3{ 
+	width: 700px;
+	height: 400px;
+	text-align: center;
+	line-height: 400px;
+}
+#memberTab3 .returnContent{ 
+	display: inline-block;
+}

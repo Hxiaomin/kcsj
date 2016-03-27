@@ -1,0 +1,131 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8,chrome=1">
+	<link rel="stylesheet" type="text/css" href="style/denglu.css">
+	<title>家庭财务管理系统登录界面</title>
+</head>
+<body>
+	<div class="wrapper"> 
+		<div class="cd-switcher">
+	   		<ul>
+	    		<li><a href="javascript:void(0)">用户登录</a></li>
+	    		<li><a href="javascript:void(0)">注册新用户</a></li>
+	   		</ul>
+   		</div>
+   		<div id="cd-login"> <!-- 登录表单 -->
+    		<form action="/login" method="post" id="loginForm">
+			    <div class="loginBox">
+			        <div class="loginBoxCenter">
+			            <p><label for="username">用户名：</label></p>
+			            <p><input type="text" id="username" name="username" class="loginInput" autofocus="autofocus" required="required" autocomplete="off" placeholder="请输入用户名" value="" /></p>
+			            <p><label for="password">密码：</label></p>
+			            <p><input type="password" id="password" name="password" class="loginInput" required="required" placeholder="请输入密码" value="" /></p>
+			        </div>
+			        <div class="loginBoxButtons">
+			            <input id="remember" type="checkbox" name="remember" />
+			            <label for="remember">记住登录状态</label>
+			            <button class="loginBtn" type="submit" id="loginbutton">登录</button>
+			        </div>
+			    </div>
+			</form>
+   		</div>
+   		<div id="cd-signup"> <!-- 注册表单 -->
+   			<form action="/reg" method="post" id="regForm">
+			    <div class="loginBox">
+			        <div class="loginBoxCenter">
+			            <p><label for="username">用户名：</label><input type="text" id="username" name="username" class="loginInput" autofocus="autofocus" required="required" autocomplete="off" placeholder="请输入用户名" value="" /></p>
+			            <p><label for="password">创建密码：</label><input type="password" name="password1" class="loginInput" required="required" placeholder="请输入密码" value="" /></p>
+			            <p><label for="password">确认密码：</label><input type="password" name="password2" class="loginInput" required="required" placeholder="请再次输入密码" value="" /></p>
+			        </div>
+			        <div class="loginBoxButtons">
+			            <input id="remember" type="checkbox" name="remember" />
+			            <label for="remember">我已阅读并同意 <a href="#0">用户协议</a></label>
+			            <button class="loginBtn" type="submit" id="regbutton">注册</button>
+			        </div>
+			    </div>
+			</form>
+   		</div>
+	</div> 
+</body>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="base.js"></script>
+<script type="text/javascript">
+	
+	$.getJSON('/user',function(json){ 
+		if(json.error===0){ 
+			window.location.href = '/';
+		}
+	});
+	/*$.getJSON('/user',function  (result) {
+
+		var user = [];
+
+		result.map(function(v){ 
+			user.push( '<p>'+v.id+'  '+ v.username +'  '+ v.password+'</p>' );
+		});
+
+		$('body').html(user.join(' '));
+
+		// body...
+	})
+function login(){
+	$.ajax({
+		url:"/userlogin",
+		type:"post",
+		contentType:"application/json",
+		data:{username:test,password:test},
+		timeout:5000,
+		dataType:"json",
+		success:function(returnData){
+			if(result.password){ 
+				$('body').html("登录成功");
+			}
+		}
+	});
+}*/
+</script>
+<script type="text/javascript">
+	$(document).ready(function($){ 
+	    var $form_modal_tab = $('.cd-switcher>ul'), 
+	        $tab_login = $form_modal_tab.children('li').eq(0).children('a'), 
+	        $tab_signup = $form_modal_tab.children('li').eq(1).children('a'), 
+	        $form_login = $('#cd-login'),
+	        $form_signup = $('#cd-signup');
+	 
+	 	$form_login.addClass('is-selected'); 
+	 	$tab_login.addClass('selected'); 
+
+	    //切换表单 
+	    $form_modal_tab.on('click', function(event) { 
+	        event.preventDefault(); 
+	        ( $(event.target).is( $tab_login ) ) ? login_selected() : signup_selected(); 
+	    });
+	 
+	 	function login_selected(){ 
+	        $form_login.addClass('is-selected'); 
+	        $form_signup.removeClass('is-selected'); 
+	        $tab_login.addClass('selected'); 
+	        $tab_signup.removeClass('selected'); 
+	    }
+	 
+	    function signup_selected(){ 
+	        $form_login.removeClass('is-selected'); 
+	        $form_signup.addClass('is-selected'); 
+	        $tab_login.removeClass('selected'); 
+	        $tab_signup.addClass('selected'); 
+	    } 
+	}); 
+	
+		/*$("#regbutton").click(function(event){ 
+		event.stopPropagation(); 
+		}); */
+
+	formSumit('#loginForm',function(result){ 
+		result.error===0 ? ( window.location.href = '/'):alert(result.msg);
+	});
+	formSumit('#regForm',function(result){ 
+		alert(result.msg);
+	});
+</script>
+</html>
